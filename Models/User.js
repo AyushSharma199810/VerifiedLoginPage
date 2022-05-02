@@ -9,13 +9,13 @@ var users = mongoose.Schema({
     email: {
         type: String,
         require: true,
-        unique: true,
+        // unique: true,
     },
 
     password: {
         type: String,
         require: true,
-        unique:true
+        // unique:true
     },
     
     phone: {

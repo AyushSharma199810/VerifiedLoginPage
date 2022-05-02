@@ -9,12 +9,21 @@ var db = mongoose.connection;
 
 const logindetail= async (req,res) => {
     
-//   const c= req.body.email;
-//   console.log(c);
+const c = req.body
   
-  const re = await register.find({email: req.body.email , password: req.body.password});
-    console.log(re);
-    };
+  
+  const val = await register.find({email: `${c.email1}` , password: `${c.password1}`}).count();
+  console.log(val);
+
+  if(val!=0){
+    res.sendFile(path.join(__dirname,"../validate.html"));
+}
+else{
+    console.log("invalid");
+}
+  }
+  
+    
 const register_user = async (req,res) => {
 
     
